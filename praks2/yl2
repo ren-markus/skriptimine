@@ -1,0 +1,23 @@
+#!/bin/bash
+
+echo "----------------------------------------"
+echo " Praegune kuupäev ja kellaaeg:"
+echo "----------------------------------------"
+date +"Kuupäev: %d.%m.%Y"
+date +"Aeg: %H:%M:%S"
+echo ""
+
+echo "----------------------------------------"
+echo " Jooksva kuu kalender:"
+echo "----------------------------------------"
+
+
+if command -v ncal &> /dev/null; then
+    ncal -b
+elif command -v cal &> /dev/null; then
+    cal
+else
+    echo "Märkus: Kalendri käsku (cal/ncal) ei leitud."
+    echo "Selle paigaldamiseks käivita: sudo apt update && sudo apt install ncal"
+fi
+echo "----------------------------------------"
