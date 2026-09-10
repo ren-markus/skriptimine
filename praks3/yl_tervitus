@@ -1,0 +1,6 @@
+#!/bin/bash
+# Skript 1: Kasutaja tervitamine (ees- ja perenime küsimine)
+
+echo -n "Sisesta oma ees- ja perenimi: "
+read Ren Markus Kuznetsov
+echo "Tere tulemast, $Ren Markus $Kuznetsov"
