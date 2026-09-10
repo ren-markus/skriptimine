@@ -1,0 +1,16 @@
+#!/bin/bash
+# Skript tervitab kasutajat vastavalt sisestatud kellaajale
+
+read -p "Sisesta aja väärtus: " aeg
+
+if test "$aeg" -ge 6 -a "$aeg" -lt 12 2>/dev/null; then
+    echo "Tere hommikust"
+elif test "$aeg" -ge 12 -a "$aeg" -lt 18 2>/dev/null; then
+    echo "Tere päevast"
+elif test "$aeg" -ge 18 -a "$aeg" -lt 22 2>/dev/null; then
+    echo "Tere õhtust"
+elif test "$aeg" -ge 22 -a "$aeg" -lt 24 2>/dev/null || test "$aeg" -ge 0 -a "$aeg" -lt 6 2>/dev/null; then
+    echo "Head ööd!"
+else
+    echo "Viga: Aja väärtus peab olema vahemikus 0 kuni 23!"
+fi

@@ -1,0 +1,15 @@
+#!/bin/bash
+# Skript tuvastab automaatselt kellaaja ning kasutajanime ja väljastab tervituse
+
+aeg=$(date +%-H)
+kasutaja=$USER
+
+if test "$aeg" -ge 6 -a "$aeg" -lt 12; then
+    echo "Tere hommikust, $kasutaja!"
+elif test "$aeg" -ge 12 -a "$aeg" -lt 18; then
+    echo "Tere päevast, $kasutaja!"
+elif test "$aeg" -ge 18 -a "$aeg" -lt 22; then
+    echo "Tere õhtust, $kasutaja!"
+else
+    echo "Head ööd, $kasutaja!"
+fi

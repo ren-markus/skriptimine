@@ -1,0 +1,17 @@
+#!/bin/bash
+# Skript väljastab vanuserühma vastavalt sisestatud vanusele
+
+read -p "Sisesta (oma) vanus: " vanus
+
+if test "$vanus" -ge 0 -a "$vanus" -lt 11 2>/dev/null; then
+    echo "Oled laps"
+elif test "$vanus" -ge 11 -a "$vanus" -lt 18 2>/dev/null; then
+    echo "Oled nooruk"
+elif test "$vanus" -ge 18 -a "$vanus" -lt 63 2>/dev/null; then
+    echo "Oled täiskasvanu"
+elif test "$vanus" -ge 63 2>/dev/null; then
+    echo "Oled senjoor"
+else
+    echo "Viga: vigane sisend!"
+fi
+
